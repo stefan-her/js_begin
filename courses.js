@@ -11,6 +11,8 @@ const items = new Set();
 let maxSpend = NaN;
 let middleSpend = NaN;
 
+
+formNode.addEventListener("submit", eventSubmit);
 init();
 
 function init() {
@@ -67,7 +69,7 @@ function addToListe() {
 
             let flag = true;
             items.forEach(function(value) {
-                if(value.get("price") == price) {
+                if(value.get("price") == price && value.get("item") == element) {
                     let conf = confirm(`le prix ${value.get("price")} pour  ${value.get("item")} existe déjà`);
                     if(!conf) { flag = false; }
                 }
@@ -81,11 +83,10 @@ function addToListe() {
         } else {
             alert("plus de budget");
         }
-
     }
 }
 
-formNode.addEventListener("submit", eventSubmit);
+
 
 
 
