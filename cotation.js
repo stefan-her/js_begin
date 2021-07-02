@@ -9,7 +9,7 @@ if(el) {
 
     if(!!isNaN && toCheck <= 20) {
         switch(true) {
-            case (toCheck === 20) : result = "Excellent";
+            case (toCheck == 20) : result = "Excellent";
                 break;
             case (toCheck >= 17) : result = "Très bien";
                 break;
