@@ -6,6 +6,7 @@ const inputPrice = formNode.elements[1];
 const budgetSpan = document.getElementById("display").getElementsByTagName("span")[0];
 const maxSpendSpan = document.getElementById("display").getElementsByTagName("span")[1];
 const middleSpendSpan = document.getElementById("display").getElementsByTagName("span")[2];
+const listItem = document.getElementsByTagName("ol")[0];
 
 const items = new Set();
 let maxSpend = NaN;
@@ -32,6 +33,15 @@ function eventSubmit(e) {
     addToListe();
     searchMax();
     middle();
+    addLine();
+}
+
+function addLine() {
+    let el = Array.from(items.values()).pop();
+    let li = document.createElement("li");
+    let txt = document.createTextNode(`${el.get("item")} au prix de ${el.get("price")}`);
+    li.appendChild(txt);
+    listItem.appendChild(li);
 }
 
 function middle() {
