@@ -18,7 +18,6 @@ function init() {
         maxSpend = parseFloat(prompt("insert max Budget : ").replace(",", "."));
         if(!isNaN(maxSpend)) { updateSpan(budgetSpan, maxSpend); }
         else { init(); }
-        
     }
 }
 
@@ -56,11 +55,11 @@ function searchMax() {
 
 function addToListe() {
     let element = inputItem.value;
-    let price = parseFloat(inputPrice.value).replace(",", ".");
+    let price = parseFloat(inputPrice.value.replace(",", "."));
 
     if(element != "" && !isNaN(price)) {
 
-        if((maxSpend - price) > 0) {
+        if((maxSpend - price) >= 0) {
 
             let item = new Map();
             item.set("item", element);
