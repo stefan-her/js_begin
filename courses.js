@@ -40,7 +40,6 @@ function middle() {
         total += value.get("price"); 
     });
 
-    console.log(total +'---'+ items.size);
     let middle = total / items.size;
     updateSpan(middleSpendSpan, middle);
 }   
